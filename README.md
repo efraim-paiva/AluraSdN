@@ -1,6 +1,6 @@
 # Projeto: Sorteador de Números
 
-Este é o meu primeiro projeto de sorteio de números, desenvolvido como parte do meu estudo em programação. Estou muito animado com o resultado!
+Este é o meu primeiro projeto de sorteio de números, desenvolvido como parte do meu estudo em programação. Estou muito satisfeito com o resultado!
 
 ## Descrição
 
