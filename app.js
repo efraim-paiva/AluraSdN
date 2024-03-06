@@ -1,7 +1,7 @@
 function sortear() {
-    var quantidade = document.getElementById('quantidade').value;
-    var de = document.getElementById('de').value;
-    var ate = document.getElementById('ate').value;
+    var quantidade = parseInt(document.getElementById('quantidade').value);
+    var de = parseInt(document.getElementById('de').value);
+    var ate = parseInt(document.getElementById('ate').value);
 
     alert(`Quantidade: ${quantidade} De: ${de} Até: ${ate}`);
 }
