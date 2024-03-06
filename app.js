@@ -6,13 +6,14 @@ function sortear() {
 
     var sorteados = [];
     var numero;
+
     for (var i = 0; i < quantidade; i++) {
         numero = numeroAleatorio(de, ate);
         sorteados.push(numero);
     }
 
-    alert(sorteados);
-
+    var resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`;
 }
 
 function numeroAleatorio(min, max) {
