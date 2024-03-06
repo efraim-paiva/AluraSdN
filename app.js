@@ -2,16 +2,26 @@ function sortear() {
     var quantidade = parseInt(document.getElementById('quantidade').value);
     var de = parseInt(document.getElementById('de').value);
     var ate = parseInt(document.getElementById('ate').value);
+    var limite = ate - de + 1;
 
 
     var sorteados = [];
     var numero;
+
 
     for (var i = 0; i < quantidade; i++) {
         numero = numeroAleatorio(de, ate);
 
         while (sorteados.includes(numero)) {
             numero = numeroAleatorio(de, ate);
+        }
+
+        if (quantidade > limite) {
+            var resposta = confirm('A quantidade de números a serem sorteados é maior que o intervalo de números possíveis. Clique em "OK" para reiniciar.');
+            if (resposta) {
+                reiniciar();
+                return;
+            }
         }
 
         sorteados.push(numero);
