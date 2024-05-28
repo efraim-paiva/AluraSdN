@@ -13,6 +13,8 @@ function sortear() {
         if (resposta) {
             reiniciar();
             return;
+        } else {
+            return; // Caso o usuário cancele, não prosseguir com o sorteio
         }
     }
 
@@ -65,13 +67,22 @@ function alterarStatusBotao() {
 
 // Função para reiniciar o sorteio
 function reiniciar() {
-    // Limpar os campos de entrada e o resultado anterior
-    document.getElementById('quantidade').value = '';
-    document.getElementById('de').value = '';
-    document.getElementById('ate').value = '';
-    document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>';
-    // Alterar o status do botão de reiniciar
-    alterarStatusBotao();
-    // Recarregar a página para reiniciar o sorteio
-    window.location.reload();
+    var botao = document.getElementById('btn-reiniciar');
+    // Verificar se o botão está habilitado antes de reiniciar
+    if (botao.classList.contains('container__botao')) {
+        // Limpar os campos de entrada e o resultado anterior
+        document.getElementById('quantidade').value = '';
+        document.getElementById('de').value = '';
+        document.getElementById('ate').value = '';
+        document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados: nenhum até agora</label>';
+        // Alterar o status do botão de reiniciar
+        alterarStatusBotao();
+    } else {
+        // Exibir mensagem temporária
+        document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Não existem resultados!</label>';
+        // Voltar ao texto original após 3 segundos
+        setTimeout(function() {
+            document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados: nenhum até agora</label>';
+        }, 3000);
+    }
 }
